@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  background-color: aqua;
+  justify-content: space-around;
+  height: 50px;
+  align-items: center;
+  color: rgb(230, 255, 255);
+}
+
+nav .logo {
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+}
+
+nav .daftar {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+nav .daftar a {
+  text-decoration: none;
+  color: rgb(230, 255, 255);
+  font-size: 0.8em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+  font-weight: 700;
+}
+
+nav .daftar a:hover {
+  color: whitesmoke;
+  background-color: rgb(180, 180, 180);
+}
+
+
+/*hamburger menu*/
+nav .menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+nav .menu-toggle input {
+  position: absolute;
+  width: 36px;
+  height: 28px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+nav .menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(230, 255, 255);
+  border-radius: 3px;
+  transition: all .5s;
+}
+
+
+
+/*hamburger menu animation*/
+nav .menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+nav .menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+  background-color: white;
+}
+
+nav .menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+nav .menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+  background-color: white;
+}
+
+nav .menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+
+/*scree res*/
+@media screen and (max-width: 768px) {
+  nav .daftar {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  nav .daftar {
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: aqua;
+    z-index: -1;
+    width: 75%;
+    transform: translateX(100%);
+    transition: all 1s;
+  }
+
+  nav .daftar.slide {
+    transform: translateX(0);
+  }
+
+  nav .menu-toggle {
+    display: flex;
+  }
+}
