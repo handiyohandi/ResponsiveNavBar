@@ -14,7 +14,6 @@ nav {
   justify-content: space-around;
   height: 50px;
   align-items: center;
-  color: rgb(230, 255, 255);
 }
 
 nav .logo {
@@ -31,7 +30,6 @@ nav .daftar {
 
 nav .daftar a {
   text-decoration: none;
-  color: rgb(230, 255, 255);
   font-size: 0.8em;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
   font-weight: 700;
@@ -65,7 +63,6 @@ nav .menu-toggle span {
   display: block;
   width: 28px;
   height: 3px;
-  background-color: rgb(230, 255, 255);
   border-radius: 3px;
   transition: all .5s;
 }
@@ -105,6 +102,10 @@ nav .menu-toggle input:checked ~ span:nth-child(3) {
 }
 
 @media screen and (max-width: 576px) {
+  body {
+    overflow-x: hidden;
+  }
+  
   nav .daftar {
     position: absolute;
     flex-direction: column;
